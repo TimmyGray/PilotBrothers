@@ -1,0 +1,49 @@
+﻿<Window x:Class="PilotBrothers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PilotBrothers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Background>
+        <ImageBrush ImageSource="/View/pilotsbackground.jpg"/>
+    </Window.Background>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="TitleRow" Height="43*" ></RowDefinition>
+            <RowDefinition x:Name="KeyCountRow" Height="43*"></RowDefinition>
+            <RowDefinition x:Name="MainRow" Height="288*"></RowDefinition>
+            <RowDefinition x:Name="OpenButtRow" Height="60*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Background="#7FDBD3AF" HorizontalAlignment="Center" Grid.Row="0">
+            
+            <TextBlock Style="{DynamicResource Pilotheadstyle}">Pilot Brothers</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Label Style="{DynamicResource Pilotlabelstyle}"
+                Name="SizeLabel"
+                VerticalContentAlignment="Center"
+                Margin="0,0,10,0">Введите размер сейфа:</Label>
+            <TextBox Style="{DynamicResource Pilotboxstyle}"
+                Margin="0,0,10,0"
+                MinWidth="40" 
+                Name="SizeSetter" 
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                ></TextBox>
+            <Button Style="{DynamicResource Pilotbutstyle}" MinWidth="60" Name="AddBut" Click="SizeSetClick">Ok</Button>
+        </StackPanel>
+        <UniformGrid Grid.Row="2" HorizontalAlignment="Center" Name="MainGrid">
+
+        </UniformGrid>
+        <StackPanel Background="Bisque" Grid.Row="3">
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="3" Margin="0,10,0,0" Width="60">
+            <Button x:Name="OpenBut" Style="{DynamicResource Pilotbutstyle}" MinWidth="60" MinHeight="40" IsEnabled="False" Click="OpenBut_Click">Open safe</Button>
+        </StackPanel>
+    </Grid>
+
+</Window>
